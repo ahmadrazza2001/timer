@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  body {
+    position: relative;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/image/bg1.jpg') center/cover no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.535); /* Adjust the RGBA values for darkness */
+    z-index: -1;
+  }
+  
+  .timer {
+    width: 550px;
+    height: 250px;
+    color: white;
+    cursor: default;
+  }
+  
+  
+  .timer h3 {
+    width: 100%;
+    font-size: 26px;
+    letter-spacing: 4px;
+    text-align: center;
+  }
+  
+  .timer--clock {
+    width: 100%;
+    position: relative;
+    padding-left: 6px;
+    margin-top: 22px;
+    overflow: hidden;
+  }
+  
+  .clock-display-grp {
+    width: 100%;
+    position: relative;
+  }
+  
+  .number-grp {
+    width: auto;
+    display: block;
+    height: 170px;
+    float: left;
+    overflow: hidden;
+  }
+  
+  .number-grp-wrp {
+    width: 100%;
+    position: relative;
+  }
+  
+  .num {
+    width: 100%;
+    position: relative;
+    height: 190px;
+  }
+  
+  .num p {
+    width: auto;
+    display: table;
+    font-size: 205px;
+    line-height: 160px;
+    font-weight: bold;
+  }
+  
+  .clock-separator {
+    width: auto;
+    float: left;
+    display: block;
+    height: 156px;
+  }
+  
+  .clock-separator p {
+    width: auto;
+    display: table;
+    font-size: 205px;
+    line-height: 150px;
+    font-weight: bold;
+  }
+  
+  h4 {
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 6px;
+    text-align: center;
+    padding-top: 25px;
+    float: left;
+  }
+  .logo-left {
+    position: fixed;
+    width: 200px;
+    top: 40px;
+    left: 50px;
+    z-index: 2; /* Adjust the z-index to be above other elements */
+  }
+  .logo-right {
+    position: fixed;
+    top: 30px;
+    width: 80px;
+    right: 50px;
+    z-index: 2; /* Adjust the z-index to be above other elements */
+  }
+  .reload {
+  
+    height: 30px;
+    position: absolute;
+    bottom: 50vh;
+    margin-left: -(125px / 2);
+    opacity: 0;
+    display: none;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  
+  
+  .reload svg {
+    color: white;
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .reload p {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+  }
+ /* Add these styles for the flame sparks */
+.flame-sparks {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1; /* Adjust the z-index to 1 */
+    overflow: hidden;
+  }
+  
+  .flame-spark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff4500;
+    opacity: 0;
+    border-radius: 50%;
+    animation: sparkAnimation 1s linear infinite;
+  }
+  
+  @keyframes sparkAnimation {
+    0% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-50vh) rotate(180deg) scale(0.5);
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg) scale(0);
+      opacity: 0;
+    }
+  }
+  
